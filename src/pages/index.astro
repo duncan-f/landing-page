@@ -1,0 +1,47 @@
+---
+import { Icon } from 'astro-icon';
+import Layout from '../layouts/Layout.astro';
+import Showcase from '../components/Showcase.astro';
+import Heading from '../components/Heading.astro';
+import Content from '../components/Content.astro';
+import Paragraph from '../components/Paragraph.astro';
+---
+
+<Layout>
+	<main role="main">
+    <Showcase heading="Bienvenue" />
+
+    <Content className="pt-5">
+      <Heading title="Présentation" />
+
+      <Paragraph>
+        S.B.Géoservices est une entreprise de services géoscientifiques
+        spécialisée dans la géophysique appliquée au génie civil.
+        L'entreprise est le fruit de longues années d'expériences et d'études
+        dans le domaine de la géophysique appliquée et de la géoscience.
+      </Paragraph>
+
+      <Paragraph>
+        Notre force est dans la maitrise et l'usage conjoint de plusieurs
+        méthodes géoscientifiques et géophysiques. Cette caractéristique nous
+        permet de fournir à nos clients des informations précises sur l'état
+        in-situ du site.
+      </Paragraph>
+
+      <Paragraph>
+        Faites confiance au savoir-faire de nos experts en géophysique pour vos
+        futurs projets géophysiques, géologiques et envionnementals.
+      </Paragraph>
+
+      <div class="text-center py-10">
+        <a
+          class="rounded font-bold py-2 px-5 text-white bg-teal-600 hover:bg-teal-900"
+          href="/services"
+        >
+          No Services
+          <Icon name="ic:round-chevron-right" />
+        </a>
+      </div>
+    </Content>
+	</main>
+</Layout>

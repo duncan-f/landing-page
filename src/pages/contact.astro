@@ -1,0 +1,27 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Content from "../components/Content.astro";
+import Showcase from "../components/Showcase.astro";
+import Paragraph from "../components/Paragraph.astro";
+import { Image } from "@astrojs/image/components";
+---
+
+<Layout>
+  <main role="main">
+    <Showcase
+      heading="Contactez Nous"
+      src="/images/contact/email.jpg"
+    />
+    <Content className="pt-5">
+      <Image
+        src="/images/contact/logo.png"
+        alt="Logo"
+        width={900}
+        height={500}
+      />
+      <Paragraph>C'est la partie contact.</Paragraph>
+    </Content>
+  </main>
+</Layout>
+
+

@@ -1,0 +1,38 @@
+---
+export interface Props {
+  title: string;
+}
+
+const {title} = Astro.props as Props;
+---
+  <header class="fixed w-full p-2 z-20 backdrop-blur-md">
+    <div class="mx-auto max-w-3xl">
+    <nav class="flex items-center text-base justify-between">
+      <h2 class="font-semibold tracking-tighter font-sans text-lg p-2">
+        <a href="/">{title}</a>
+      </h2>
+
+      <ul class="md:flex hidden items-center gap-6 p-2">
+        <li>
+          <a
+            class="hover:underline underline-offset-2 decoration-2"
+            href="/services"
+          >Services</a>
+        </li>
+        <li>
+          <a
+            class="hover:underline underline-offset-2 decoration-2"
+            href="/projects"
+          >Réalisations</a>
+        </li>
+        <li>
+          <a
+            class="hover:underline underline-offset-2 decoration-2"
+            href="/contact"
+          >Contact</a>
+        </li>
+      </ul>
+    </nav>
+    </div>
+  </header>
+

@@ -1,0 +1,21 @@
+---
+import Heading from "../components/Heading.astro";
+import Layout from "../layouts/Layout.astro";
+import Content from "../components/Content.astro";
+import Showcase from "../components/Showcase.astro";
+import Paragraph from "../components/Paragraph.astro";
+---
+
+<Layout>
+  <main role="main">
+    <Showcase
+      heading="No Réalisations"
+      src="/images/projects/horizon.jpg"
+    />
+    <Content className="pt-5">
+      <Heading title="Nos Réalisations" />
+      <Paragraph>Cette partie n'est pas encore implementée.</Paragraph>
+    </Content>
+  </main>
+</Layout>
+

@@ -1,0 +1,18 @@
+---
+import Heading from "../components/Heading.astro";
+import Layout from "../layouts/Layout.astro";
+import Content from "../components/Content.astro";
+import Showcase from "../components/Showcase.astro";
+---
+
+<Layout>
+  <main role="main">
+    <Showcase
+      heading="Nos Services"
+      src="/images/services/services.jpg"
+    />
+    <Content className="pt-5">
+      <Heading title="Nos Service" />
+    </Content>
+  </main>
+</Layout>
