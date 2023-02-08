@@ -1,12 +1,7 @@
 ---
+import { SITE_NAME } from '../config';
 import HeaderLink from './HeaderLink.astro';
 import ThemeToggle from './ThemeToggle';
-
-export interface Props {
-  title: string;
-}
-
-const {title} = Astro.props as Props;
 ---
   <header
     class="fixed w-full p-2 z-20 backdrop-blur-md text-slate-100 dark:text-slate-200"
@@ -17,7 +12,7 @@ const {title} = Astro.props as Props;
         <h2
           class="font-semibold tracking-tighter font-oswald text-lg p-2"
         >
-          {title}
+          {SITE_NAME}
         </h2>
       </a>
 

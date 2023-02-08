@@ -1,21 +1,48 @@
 ---
+import { Image } from '@astrojs/image/components';
+
 export interface Props {
+  src: string;
 	title: string;
-	body: string;
-	href: string;
+	href?: string;
 }
 
-const { href, title, body } = Astro.props;
+const { src, href, title } = Astro.props;
 ---
 
-<li class="link-card">
-	<a href={href}>
-		<h2>
-			{title}
-			<span>&rarr;</span>
-		</h2>
-		<p>
-			{body}
-		</p>
-	</a>
-</li>
+<!-- Card -->
+<div class="my-1 px-1 w-full">
+
+  <!-- Card Content -->
+  <div class="overflow-hidden">
+    <Image
+      width={500}
+      height={400}
+      alt={title}
+      class="rounded-lg block h-auto w-full"
+      src={src}
+    />
+
+    <div class="leading-tight p-2 md:p-4">
+      <h2 class="text-center text-lg font-oswald">
+        <a
+          class="no-underline hover:underline text-black dark:text-zinc-50"
+          href={href}
+        >
+          {title}
+        </a>
+      </h2>
+    </div>
+
+    <!-- Card Body -->
+    <div class="leading-none p-2 md:p-4">
+      <slot />
+    </div>
+    <!-- End Card Body -->
+
+  </div>
+  <!-- END Card Content -->
+
+</div>
+<!-- END Card -->
+

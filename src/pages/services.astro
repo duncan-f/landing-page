@@ -3,6 +3,8 @@ import Heading from "../components/Heading.astro";
 import Layout from "../layouts/Layout.astro";
 import Content from "../components/Content.astro";
 import Showcase from "../components/Showcase.astro";
+import GridItem from "../components/GridItem.astro";
+import Card from "../components/Card.astro";
 ---
 
 <Layout>
@@ -13,6 +15,24 @@ import Showcase from "../components/Showcase.astro";
     />
     <Content className="pt-5">
       <Heading title="Nos Service" />
+
+      <GridItem>
+      <Card
+        src="/images/services/sismique.jpg"
+        title="Levés Sismique"
+        href="/project/seismic"
+      />
+      <Card
+        src="/images/services/georadar.jpeg"
+        title="Géoradar"
+        href="/project/georadar"
+      />
+      <Card
+        src="/images/services/data.jpg"
+        title="Traitement de données géoscientifiques"
+        href="/project/data"
+      />
+      </GridItem>
     </Content>
   </main>
 </Layout>

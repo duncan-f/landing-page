@@ -11,19 +11,19 @@ export interface Props {
 	title?: string;
 }
 
-const { title = "S.B. Géoservices Inc." } = Astro.props;
+const { title } = Astro.props;
 ---
 
 <!DOCTYPE html>
 <html lang="en">
   <Head
-    title={SITE_NAME}
+    title={title ? title+' &bull; '+SITE_NAME : SITE_NAME}
     author={SITE_AUTHOR}
     description={SITE_DESCRIPTION}
   />
 
   <body class="bg-teal-50 dark:bg-zinc-900 text-zinc-900 dark:text-zinc-300 break-words leading-6 transition-colors duration-500">
-    <Header title={title ? title : SITE_NAME} />
+    <Header />
     <slot />
   </body>
 </html>
