@@ -1,0 +1,15 @@
+---
+export interface Props {
+  href: string;
+}
+
+const { href } = Astro.props as Props;
+---
+
+<a
+  class="hover:underline underline-offset-2 decoration-2"
+  href={href}
+>
+  <slot />
+</a>
+
