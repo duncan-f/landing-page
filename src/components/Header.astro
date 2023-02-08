@@ -3,12 +3,13 @@ import { Image } from '@astrojs/image/components';
 import { SITE_NAME } from '../config';
 import HeaderLink from './HeaderLink.astro';
 import ThemeToggle from './ThemeToggle';
+import DropdownMenu from './DropdownMenu';
 ---
   <header
-    class="fixed w-full p-2 z-20 backdrop-blur text-zinc-300 dark:text-zinc-50"
+    class="fixed w-full p-2 z-20 backdrop-blur"
   >
     <div class="mx-auto max-w-3xl">
-    <nav class="flex items-center text-base">
+    <nav class="flex items-center text-base gap-3">
       <a class="group" href="/">
         <div class="flex items-center">
           <Image

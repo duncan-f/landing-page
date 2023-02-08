@@ -1,0 +1,44 @@
+---
+import {
+  IoLogoFacebook,
+  IoLogoLinkedin,
+  IoMail
+} from 'react-icons/io5/index.js';
+import { BsTelephoneFill } from 'react-icons/bs';
+import Link from './Link.astro';
+---
+<footer class="max-w-3xl mx-auto px-8 pt-10 pb-5">
+  <div class="flex items-center justify-between">
+    <div class="flex-1">
+      <h4 class="font-bold text-lg">Contact</h4>
+      <div class="flex items-center gap-2">
+        <BsTelephoneFill />
+        <Link href="tel:0014389942670">
+          (438)-994-2670
+        </Link>
+      </div>
+      <div class="flex items-center gap-2">
+        <IoMail />
+        <Link href="mailto:sb-geoservices@outlook.com">
+          sb-geoservices@outlook.com
+        </Link>
+      </div>
+    </div>
+
+    <div class="flex items-center gap-4">
+      <a
+        class="text-5xl text-teal-500"
+        href="https://www.linkedin.com/company/sofiane-boulila-g%C3%A9oservices"
+      >
+        <IoLogoLinkedin />
+      </a>
+      <a
+        class="text-5xl text-teal-500"
+        href="https://www.facebook.com/sofiane.polina"
+      >
+        <IoLogoFacebook />
+      </a>
+    </div>
+  </div>
+</footer>
+
