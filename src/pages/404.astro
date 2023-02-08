@@ -6,16 +6,29 @@ import Layout from "../layouts/Layout.astro";
 
 
 <Layout>
-<div class="flex items-center mx-auto justify-items-center">
-<div class="flex-col">
-404 | Page not Found
-Pealse check the URL in the address bar and try again.
-</div>
-<div
-  class="flex items-center rounded w-48 h-10 font-bold py-2 px-5 text-white bg-teal-600 hover:bg-teal-900"
->
-  <IoChevronBack />
-  Go back home
-</div>
+<div class="flex items-center h-screen px-5 py-2">
+  <div class="flex-col justify-items-center text-center m-auto">
+    <div class="flex items-center text-4xl font-bold text-center">
+      <div class="text-teal-400 px-3">404</div>
+
+      <span class="h-10 p-0.5 bg-slate-300"></span>
+
+      <div class="px-3">Page not Found</div>
+    </div>
+    <div class="text-center py-2">
+      Please check the URL in the address bar and try again.
+    </div>
+
+    <div class="w-40 py-6 m-auto">
+    <a href="/">
+      <div
+        class="flex justify-between items-center rounded font-bold py-2 px-5 text-white bg-teal-600 hover:bg-teal-900"
+      >
+        <IoChevronBack />
+        Go back home
+      </div>
+    </a>
+    </div>
+  </div>
 </div>
 </Layout>
