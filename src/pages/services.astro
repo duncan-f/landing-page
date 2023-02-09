@@ -5,6 +5,12 @@ import Content from "../components/Content.astro";
 import Showcase from "../components/Showcase.astro";
 import GridItem from "../components/GridItem.astro";
 import Card from "../components/Card.astro";
+
+const services = (await Astro.glob('./services/*.md')).sort(
+  (a: any, b: any) =>
+    new Date(b.frontmatter.createdAt).valueOf() -
+    new Date(a.frontmatter.createdAt).valueOf()
+)
 ---
 
 <Layout>
@@ -17,21 +23,15 @@ import Card from "../components/Card.astro";
       <Heading title="Nos Service" />
 
       <GridItem>
+    {
+      services.map(service => (
       <Card
-        src="/images/services/sismique.jpg"
-        title="Levés Sismique"
-        href="/project/seismic"
+        src={service.frontmatter.heroImage}
+        title={service.frontmatter.title}
+        href={service.url}
       />
-      <Card
-        src="/images/services/georadar.jpeg"
-        title="Géoradar"
-        href="/project/georadar"
-      />
-      <Card
-        src="/images/services/data.jpg"
-        title="Traitement de données géoscientifiques"
-        href="/project/data"
-      />
+      ))
+    }
       </GridItem>
     </Content>
   </main>

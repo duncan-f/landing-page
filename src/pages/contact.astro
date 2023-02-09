@@ -1,9 +1,11 @@
 ---
+import Link from "../components/Link.astro";
 import Layout from "../layouts/Layout.astro";
 import Content from "../components/Content.astro";
 import Showcase from "../components/Showcase.astro";
-import Paragraph from "../components/Paragraph.astro";
+import { IoMail } from "react-icons/io5";
 import { Image } from "@astrojs/image/components";
+import { BsTelephoneFill } from "react-icons/bs";
 ---
 
 <Layout>
@@ -13,13 +15,64 @@ import { Image } from "@astrojs/image/components";
       src="/images/contact/email.jpg"
     />
     <Content className="pt-5">
+      <div class="divide-y divide-solid">
+      <div>
       <Image
         src="/images/contact/logo.png"
         alt="Logo"
         width={900}
         height={500}
       />
-      <Paragraph>C'est la partie contact.</Paragraph>
+      </div>
+      <div class="md:flex items-center justify-between gap-40 py-6">
+        <div class="flex-1 pb-6 max-w-lg">
+          <h3 class="text-xl font-bold font-oswald">Sofiane Boulila, ing</h3>
+          <p class="text-base">Président et fondateur</p>
+          <div class="flex items-center gap-2">
+            <BsTelephoneFill />
+            <Link href="tel:0014389942670">
+              (438)-994-2670
+            </Link>
+          </div>
+
+          <div class="flex items-center gap-2">
+            <IoMail />
+            <Link href="mailto:sb-geoservices@outlook.com">
+              sb-geoservices@outlook.com
+            </Link>
+          </div>
+        </div>
+
+        <div class="max-w-xs justify-end">
+          <Image
+            width={1280}
+            height={1412}
+            alt="Sofiane Boulila"
+            src="/images/contact/sb.jpg"
+          />
+        </div>
+      </div>
+
+      <div class="md:flex items-center justify-between gap-40 py-6">
+        <div class="flex-1 pb-6 max-w-lg">
+          <h3 class="text-xl font-bold font-oswald">
+            Siège social - Montréal
+          </h3>
+          <p class="text-base">7665 André-Ampère</p>
+          <p class="text-base">Montréal, QC H1E 5N4</p>
+          <p class="text-base">Canada</p>
+        </div>
+
+        <div class="justify-end max-w-xs">
+          <iframe
+            height="350"
+            aria-label="Map, 7665 Av. André Ampère"
+            src="https://maps-api-ssl.google.com/maps?hl=en-US&amp;ll=45.631901,-73.599504&amp;output=embed&amp;q=7665+Av.+Andr%C3%A9+Amp%C3%A8re,+Montr%C3%A9al,+QC+H1E+5N4,+Canada+(7665+Av.+Andr%C3%A9+Amp%C3%A8re)&amp;z=16"
+          />
+        </div>
+      </div>
+      </div>
+
     </Content>
   </main>
 </Layout>
