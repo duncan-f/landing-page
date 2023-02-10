@@ -1,12 +1,11 @@
 ---
 description: Le géoradar est une technique de géoscience appliquée au génie civil.
-draft: false
-layout: ../../layouts/Layout.astro
-title: Géoradar
+layout: ../../layouts/Detail.astro
+title: Détection au Géoradar
 createdAt: 1663138523826
 updatedAt: 1663138544071
 heroImage: /images/services/georadar.jpeg
-slug: georadar
+slug: detection-au-georadar
 ---
 
 Le géoradar (en anglais GPR pour Ground Penetrating Radar) est une technique de prospection géophysique non destructive fondée sur l’analyse des phénomènes de propagation (réfraction, réflexion et diffraction) des ondes électromagnétiques hautes fréquences (10 MHz à 2 GHz) dans le sous-sol.

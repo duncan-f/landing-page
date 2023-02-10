@@ -10,6 +10,10 @@ export interface Props {
 const { src, href, title } = Astro.props;
 ---
 
+<a
+  class="no-underline hover:underline text-black dark:text-zinc-50"
+  href={href}
+>
 <!-- Card -->
 <div class="my-1 px-1 w-full">
 
@@ -25,12 +29,7 @@ const { src, href, title } = Astro.props;
 
     <div class="leading-tight p-2 md:p-4">
       <h2 class="text-center text-lg font-oswald">
-        <a
-          class="no-underline hover:underline text-black dark:text-zinc-50"
-          href={href}
-        >
           {title}
-        </a>
       </h2>
     </div>
 
@@ -45,4 +44,4 @@ const { src, href, title } = Astro.props;
 
 </div>
 <!-- END Card -->
-
+</a>

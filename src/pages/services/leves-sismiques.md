@@ -1,7 +1,6 @@
 ---
 description: Levés Sismiques
-public: true
-layout: ../../layouts/Layout.astro
+layout: ../../layouts/Detail.astro
 title: Levés Sismiques
 createdAt: 1663138523826
 updatedAt: 1663138544071
@@ -9,7 +8,9 @@ heroImage: /images/services/sismique.jpg
 slug: leves-sismiques
 ---
 
-La sismique est une méthode de prospection géophysique dans laquelle une source émet des ondes élastiques qui pénètrent dans le sol, s’y propagent et se réfléchissent sur les interfaces séparant des milieux différents où les vitesses des ondes varient (par exemple, des couches géologiques). On recueille les signaux réfléchis de façon à établir la vitesse des ondes dans ces milieux et la géométrie des milieux traversés. La connaissance de la vitesse de propagation de l’onde sismique et le temps de parcours source-récepteur permettent de calculer la profondeur.
+La sismique est une méthode de prospection géophysique dans laquelle une source émet des ondes élastiques qui pénètrent dans le sol, s’y propagent et se réfléchissent sur les interfaces séparant des milieux différents où les vitesses des ondes varient (par exemple, des couches géologiques).
+
+On recueille les signaux réfléchis de façon à établir la vitesse des ondes dans ces milieux et la géométrie des milieux traversés. La connaissance de la vitesse de propagation de l’onde sismique et le temps de parcours source-récepteur permettent de calculer la profondeur.
 
 ## Applications
 ### Sismique MASW

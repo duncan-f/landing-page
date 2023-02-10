@@ -1,0 +1,35 @@
+---
+import Body from "../components/Body.astro";
+import Content from "../components/Content.astro";
+import Footer from "../components/Footer.astro";
+import Head from "../components/Head.astro";
+import Header from "../components/Header.astro";
+import { SITE_AUTHOR } from "../config";
+
+export interface Props {
+  content: {
+    title: string;
+    description: string;
+  }
+}
+
+const { content: { title, description } } = Astro.props as Props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<Head
+  author={SITE_AUTHOR}
+  {title}
+  {description}
+/>
+<Body>
+  <Header />
+
+  <Content className="pt-20">
+    <slot />
+  </Content>
+
+  <Footer />
+</Body>
+</html>
