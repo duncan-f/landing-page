@@ -10,38 +10,21 @@ export interface Props {
 const { src, href, title } = Astro.props;
 ---
 
-<a
-  class="no-underline hover:underline text-black dark:text-zinc-50"
-  href={href}
->
-<!-- Card -->
-<div class="my-1 px-1 w-full">
+<a href={href}>
+<div class="flex items-end my-1 py-1 w-full relative">
+  <Image
+    src={src}
+    alt={title}
+    width={400}
+    height={400}
+    class="rounded-lg"
+  />
 
-  <!-- Card Content -->
-  <div class="overflow-hidden">
-    <Image
-      width={500}
-      height={400}
-      alt={title}
-      class="rounded-lg block h-auto w-full"
-      src={src}
-    />
-
-    <div class="leading-tight p-2 md:p-4">
-      <h2 class="text-center text-lg font-oswald">
-          {title}
-      </h2>
-    </div>
-
-    <!-- Card Body -->
-    <div class="leading-none p-2 md:p-4">
-      <slot />
-    </div>
-    <!-- End Card Body -->
-
+  <div class="bg-slate-900/60 rounded-b-lg w-full absolute pl-2 py-2">
+    <h2 class="text-md text-white font-bold font-oswald hover:underline pb-1">
+      {title}
+    </h2>
+    <div class="container text-sm text-white"><slot /></div>
   </div>
-  <!-- END Card Content -->
-
 </div>
-<!-- END Card -->
 </a>

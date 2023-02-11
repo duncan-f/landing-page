@@ -1,0 +1,48 @@
+---
+import { IoChevronForward, IoHome } from 'react-icons/io5';
+
+export interface Props {
+  url: string;
+  title: string;
+}
+
+const { url, title } = Astro.props as Props;
+
+const paths = Astro.url.pathname.split('/').filter((crumb: any) => crumb);
+const ariaCurrent = Astro.url.pathname === '/' ? 'page' : undefined;
+---
+
+<nav class="flex" aria-label="Breadcrumb">
+  <ol class="inline-flex items-center space-x-1 md:space-x-3">
+    <li class="inline-flex items-center">
+      <a
+        href="/"
+        class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-teal-600 dark:text-gray-400 dark:hover:text-teal-300"
+      >
+        <IoHome />
+      </a>
+    </li>
+    <li>
+      <div class="flex items-center">
+        <IoChevronForward />
+        <a
+          href={`/${paths[0]}`}
+          class="ml-1 capitalize text-sm font-medium text-gray-700 hover:text-teal-600 md:ml-2 dark:text-gray-400 dark:hover:text-teal-300"
+        >
+         {paths[0]}
+        </a>
+      </div>
+    </li>
+    <li aria-current={ariaCurrent}>
+      <div class="flex items-center">
+        <IoChevronForward />
+        <span
+          class="ml-1 text-sm font-medium text-gray-500 md:ml-2 dark:text-gray-400"
+        >
+          {title}
+        </span>
+      </div>
+    </li>
+  </ol>
+</nav>
+
