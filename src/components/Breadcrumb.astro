@@ -9,7 +9,6 @@ export interface Props {
 const { url, title } = Astro.props as Props;
 
 const paths = Astro.url.pathname.split('/').filter((crumb: any) => crumb);
-const ariaCurrent = Astro.url.pathname === '/' ? 'page' : undefined;
 ---
 
 <nav class="flex" aria-label="Breadcrumb">
@@ -33,7 +32,7 @@ const ariaCurrent = Astro.url.pathname === '/' ? 'page' : undefined;
         </a>
       </div>
     </li>
-    <li aria-current={ariaCurrent}>
+    <li aria-current="page">
       <div class="flex items-center">
         <IoChevronForward />
         <span
