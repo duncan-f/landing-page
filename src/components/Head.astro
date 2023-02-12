@@ -3,9 +3,15 @@ export interface Props {
   author: string;
   title: string;
   description: string;
+  image?: string;
 }
 
-const { title, author, description } = Astro.props as Props;
+const {
+  title,
+  author,
+  description,
+  image = '../../public/images/home/georadar.jpeg'
+} = Astro.props as Props;
 ---
 <head>
   <!-- Global Metadata -->
@@ -14,15 +20,29 @@ const { title, author, description } = Astro.props as Props;
   <meta name="generator" content={Astro.generator} />
   <meta name="author" content={author} />
   <meta name="description" content={description} />
+  <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
 
   <!-- Google Fonts -->
-  <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap"
   />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={Astro.url} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={new URL(image, Astro.url)} />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content={Astro.url} />
+  <meta property="twitter:title" content={title} />
+  <meta property="twitter:description" content={description} />
+  <meta property="twitter:image" content={new URL(image, Astro.url)} />
 
   <!-- Dark-mode script -->
   <script is:inline>
