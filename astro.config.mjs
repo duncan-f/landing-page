@@ -1,9 +1,9 @@
 import { defineConfig } from 'astro/config';
 import image from "@astrojs/image";
 import react from "@astrojs/react";
-import netlify from "@astrojs/netlify/functions";
 import tailwind from "@astrojs/tailwind";
 import addClasses from "rehype-add-classes";
+import netlify from "@astrojs/netlify/functions";
 
 // https://astro.build/config
 export default defineConfig({
@@ -15,7 +15,8 @@ export default defineConfig({
     tailwind()
   ],
   markdown: {
-    extendDefaultPlugins: true,
+    gfm: false,
+    smartypants: false,
     rehypePlugins: [
       [
         addClasses,

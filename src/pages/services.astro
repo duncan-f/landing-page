@@ -25,7 +25,9 @@ const services = (await Astro.glob('./services/*.md'))
         src={service.frontmatter.heroImage}
         title={service.frontmatter.title}
         href={service.url}
-      />
+      >
+        {service.frontmatter.description}
+      </Card>
       ))
     }
       </GridItem>
