@@ -60,3 +60,4 @@ béton, car elles permettent d'en calculer les coefficients dynamiques.
 ### Méthodes combinées pour l'ingénierie sismiques
 
 ![Méthodes Combinées](/images/services/combine.jpg)
+

@@ -38,3 +38,5 @@ stratifications du sous-sol.
 - Évaluation de la profondeur du roc;
 - Stratigraphie géologique;
 
+## NOUVEAUTÉ : Le géoradar au service de la géotechnique routière
+[![Thumbnail](/images/services/georadar.webp)](https://www.youtube.com/watch?v=fC0s6EMtruo)

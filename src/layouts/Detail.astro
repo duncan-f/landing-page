@@ -38,10 +38,14 @@ const {
       {title}
     </Breadcrumb>
 
-    <h1 class="text-3xl text-center font-bold font-oswald py-5">
-      {title}
-    </h1>
-    <slot />
+    <div
+      class="mx-auto max-w-none prose dark:prose-invert prose-a:underline prose-a:underline-offset-2 prose-p:text-justify prose-img:rounded-xl prose-headings:font-oswald"
+    >
+      <h1 class="text-3xl text-center font-bold font-oswald py-5">
+        {title}
+      </h1>
+      <slot />
+    </div>
   </Content>
   </main>
 
