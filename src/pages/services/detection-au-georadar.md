@@ -1,9 +1,7 @@
 ---
-description: Le géoradar est une technique de géoscience appliquée au génie civil.
 layout: ../../layouts/Detail.astro
 title: Détection au Géoradar
-createdAt: 1663138523826
-updatedAt: 1663138544071
+description: Le géoradar est une technique de géoscience appliquée au génie civil.
 heroImage: /images/services/georadar.jpeg
 slug: detection-au-georadar
 ---

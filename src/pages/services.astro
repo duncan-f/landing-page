@@ -6,11 +6,7 @@ import Showcase from "../components/Showcase.astro";
 import GridItem from "../components/GridItem.astro";
 import Card from "../components/Card.astro";
 
-const services = (await Astro.glob('./services/*.md')).sort(
-  (a: any, b: any) =>
-    new Date(b.frontmatter.createdAt).valueOf() -
-    new Date(a.frontmatter.createdAt).valueOf()
-)
+const services = (await Astro.glob('./services/*.md'))
 ---
 
 <Layout>

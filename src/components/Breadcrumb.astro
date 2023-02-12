@@ -2,11 +2,10 @@
 import { IoChevronForward, IoHome } from 'react-icons/io5';
 
 export interface Props {
-  url: string;
-  title: string;
+  name?: string;
 }
 
-const { url, title } = Astro.props as Props;
+const { name } = Astro.props as Props;
 
 const paths = Astro.url.pathname.split('/').filter((crumb: any) => crumb);
 ---
@@ -38,7 +37,7 @@ const paths = Astro.url.pathname.split('/').filter((crumb: any) => crumb);
         <span
           class="ml-1 text-sm font-medium text-gray-500 md:ml-2 dark:text-gray-400"
         >
-          {title}
+          <slot />
         </span>
       </div>
     </li>

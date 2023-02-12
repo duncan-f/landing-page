@@ -1,9 +1,7 @@
 ---
-description: La sismique est une méthode de prospection géophysique.
 layout: ../../layouts/Detail.astro
 title: Levés Sismiques
-createdAt: 1663138523826
-updatedAt: 1663138544071
+description: La sismique est une méthode de prospection géophysique.
 heroImage: /images/services/sismique.jpg
 slug: leves-sismiques
 ---

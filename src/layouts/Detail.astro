@@ -9,7 +9,6 @@ import { SITE_AUTHOR } from "../config";
 
 export interface Props {
   content: {
-    url: string;
     title: string;
     description: string;
   }
@@ -17,7 +16,6 @@ export interface Props {
 
 const {
   content: {
-    url,
     title,
     description
   }
@@ -32,17 +30,22 @@ const {
   {description}
 />
 <Body>
-  <main role="main">
   <Header />
-  <Content className="pt-20">
-    <Breadcrumb {url} {title} />
 
-    <h1 class="text-3xl text-center font-bold font-oswald py-10">
+  <main role="main">
+  <Content className="pt-20">
+    <Breadcrumb>
+      {title}
+    </Breadcrumb>
+
+    <h1 class="text-3xl text-center font-bold font-oswald py-5">
       {title}
     </h1>
     <slot />
   </Content>
-  <Footer />
   </main>
+
+  <Footer />
 </Body>
 </html>
+

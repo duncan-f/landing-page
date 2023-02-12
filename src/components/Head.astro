@@ -8,12 +8,14 @@ export interface Props {
 const { title, author, description } = Astro.props as Props;
 ---
 <head>
+  <!-- Global Metadata -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width" />
   <meta name="generator" content={Astro.generator} />
   <meta name="author" content={author} />
   <meta name="description" content={description} />
 
+  <!-- Google Fonts -->
   <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -22,6 +24,7 @@ const { title, author, description } = Astro.props as Props;
     href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap"
   />
 
+  <!-- Dark-mode script -->
   <script is:inline>
     const theme = (() => {
       if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
