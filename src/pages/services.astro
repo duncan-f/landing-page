@@ -19,17 +19,15 @@ const services = (await Astro.glob('./services/*.md'))
       <Heading title="Nos Services" />
 
       <GridItem>
-    {
-      services.map(service => (
-      <Card
-        src={service.frontmatter.heroImage}
-        title={service.frontmatter.title}
-        href={service.url}
-      >
-        {service.frontmatter.description}
-      </Card>
-      ))
-    }
+      {services.map(service => (
+        <Card
+          src={service.frontmatter.heroImage}
+          title={service.frontmatter.title}
+          href={service.url}
+        >
+          {service.frontmatter.description}
+        </Card>
+      ))}
       </GridItem>
     </Content>
   </main>
