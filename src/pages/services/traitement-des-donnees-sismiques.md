@@ -1,5 +1,6 @@
 ---
 layout: ../../layouts/Detail.astro
+name: Méthodes
 title: Traitement des données sismiques
 description: Traitement des données sismiques
 heroImage: /images/services/data.jpg

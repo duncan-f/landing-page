@@ -5,19 +5,24 @@ import Content from "../components/Content.astro";
 import Footer from "../components/Footer.astro";
 import Head from "../components/Head.astro";
 import Header from "../components/Header.astro";
+import Showcase from "../components/Showcase.astro";
 import { SITE_AUTHOR } from "../config";
 
 export interface Props {
   content: {
+    name: string;
     title: string;
     description: string;
+    heroImage: string;
   }
 }
 
 const {
   content: {
+    name,
     title,
-    description
+    description,
+    heroImage
   }
 } = Astro.props as Props;
 ---
@@ -33,8 +38,9 @@ const {
   <Header />
 
   <main role="main">
-  <Content className="pt-20">
-    <Breadcrumb>
+  <Showcase heading={title} src={heroImage} />
+  <Content className="pt-10">
+    <Breadcrumb {name}>
       {title}
     </Breadcrumb>
 

@@ -1,0 +1,46 @@
+---
+import { IoChevronForward } from "react-icons/io5";
+import Content from "../components/Content.astro";
+import Footer from "../components/Footer.astro";
+import Heading from "../components/Heading.astro";
+import Paragraph from "../components/Paragraph.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+<main role="main">
+<Content className="pt-20">
+  <Heading title="Présentation" />
+
+  <Paragraph>
+    S.B.Géoservices est une entreprise de services géoscientifiques spécialisée
+    dans la géophysique appliquée au génie civil.
+    L'entreprise est le fruit de longues années d'expériences et d'études dans
+    le domaine de la géophysique appliquée et de la géoscience.
+  </Paragraph>
+
+  <Paragraph>
+    Notre force est dans la maitrise et l'usage conjoint de plusieurs méthodes
+    géoscientifiques et géophysiques. Cette caractéristique nous permet de
+    fournir à nos clients des informations précises sur l'état in-situ du site.
+  </Paragraph>
+
+  <Paragraph>
+    Faites confiance au savoir-faire de nos experts en géophysique pour vos
+    futurs projets <b>géophysiques</b>, <b>géologiques</b> et
+    <b>envionnementals</b>.
+  </Paragraph>
+
+  <div class="py-5 w-48 m-auto">
+    <a
+        class="flex justify-between items-center rounded font-bold py-2 px-5 dark:text-zinc-900 text-white bg-teal-500 hover:bg-teal-700"
+        href="/projects"
+    >
+      Nos Réalisations
+      <IoChevronForward />
+    </a>
+  </div>
+</Content>
+</main>
+<Footer />
+</Layout>

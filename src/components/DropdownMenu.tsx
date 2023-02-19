@@ -26,7 +26,7 @@ export default function DropdownMenu() {
       >
         <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md border border-zinc-400 dark:border-zinc-700 bg-teal-50 dark:bg-zinc-800 shadow-xl ring-1 ring-black ring-opacity-5 focus:outline-none divide-zinc-400 dark:divide-zinc-700">
           <div className="py-1">
-            <DropdownMenuItem href="/">
+            <DropdownMenuItem href="/about">
               À propos de nous
             </DropdownMenuItem>
             <DropdownMenuItem href="/services">

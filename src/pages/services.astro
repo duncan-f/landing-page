@@ -5,6 +5,7 @@ import Content from "../components/Content.astro";
 import Showcase from "../components/Showcase.astro";
 import GridItem from "../components/GridItem.astro";
 import Card from "../components/Card.astro";
+import Footer from "../components/Footer.astro";
 
 const services = (await Astro.glob('./services/*.md'))
 ---
@@ -12,11 +13,11 @@ const services = (await Astro.glob('./services/*.md'))
 <Layout>
   <main role="main">
     <Showcase
-      heading="Nos Services"
+      heading="Méthodes et applications"
       src="/images/services/services.jpg"
     />
     <Content className="pt-5">
-      <Heading title="Nos Services" />
+      <Heading title="Méthodes et applications" />
 
       <GridItem>
       {services.map(service => (
@@ -31,4 +32,5 @@ const services = (await Astro.glob('./services/*.md'))
       </GridItem>
     </Content>
   </main>
+  <Footer />
 </Layout>

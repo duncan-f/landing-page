@@ -5,9 +5,12 @@ export interface Props {
   name?: string;
 }
 
-const { name } = Astro.props as Props;
-
 const paths = Astro.url.pathname.split('/').filter((crumb: any) => crumb);
+paths.map(path =>
+  console.log(path)
+)
+
+const { name = paths[0] } = Astro.props as Props;
 ---
 
 <nav class="flex" aria-label="Breadcrumb">
@@ -27,7 +30,7 @@ const paths = Astro.url.pathname.split('/').filter((crumb: any) => crumb);
           href={`/${paths[0]}`}
           class="ml-1 capitalize text-sm font-medium text-gray-700 hover:text-teal-600 md:ml-2 dark:text-gray-400 dark:hover:text-teal-300"
         >
-         {paths[0]}
+         {name}
         </a>
       </div>
     </li>

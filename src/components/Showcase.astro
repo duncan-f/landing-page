@@ -3,13 +3,11 @@ import { Image } from '@astrojs/image/components';
 
 export interface Props {
   heading: string;
-  text?: string;
   src?: string;
 }
 
 const {
   heading,
-  text,
   src = "/images/home/georadar.jpeg"
 } = Astro.props as Props;
 ---
@@ -26,10 +24,8 @@ const {
     <h1 class="font-oswald font-bold text-5xl dark:text-zinc-50 text-zinc-900">
       {heading}
     </h1>
-{text && (
-  <>
-    <p class="font-oswald text-zinc-200 dark:text-zinc-50">{text}</p>
-  </>
-)}
+    <p class="mt-6 text-xl font-oswald text-zinc-200 dark:text-zinc-50">
+      <slot />
+    </p>
   </div>
 </div>
