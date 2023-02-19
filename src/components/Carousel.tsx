@@ -1,12 +1,11 @@
 import * as React from "react";
-import Swipe from "react-easy-swipe";
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 
 interface Props {
   services: any[];
 };
 
-export type State = {
+type State = {
   currentSlide: number;
   paused: boolean;
 };
@@ -60,6 +59,49 @@ class Carousel extends React.Component<Props, State> {
             onClick={this.prevSlide}
             className="absolute left-10 text-3xl inset-y-1/2 text-white cursor-pointer"
           />
+
+            {this.props.services.map((slide, index) => {
+              return (
+              <>
+              <div className="flex items-center justify-center">
+                <img
+                  src={slide.frontmatter.heroImage}
+                  alt={slide.frontmatter.title}
+                  key={index}
+                  className={
+                    index === this.state.currentSlide
+                      ? "w-full h-screen object-cover"
+                      : "hidden"
+                  }
+                  onMouseEnter={() => {
+                    this.setState({ paused: true });
+                  }}
+                  onMouseLeave={() => {
+                    this.setState({ paused: false });
+                  }}
+                />
+                <div className={
+                  index === this.state.currentSlide
+                  ? "absolute bottom-0 pt-5 text-center bg-slate-50/40 dark:bg-gray-900/40 w-full h-40"
+                  : "hidden"
+                }>
+                  <div className="mx-6 text-3xl font-oswald font-bold">
+                    <a
+                      className="no-underline hover:underline"
+                      href={slide.url}
+                    >
+                      {slide.frontmatter.title}
+                    </a>
+                  </div>
+                  {slide.frontmatter.description && (
+                  <div className="mx-8 text-lg">
+                    {slide.frontmatter.description}
+                  </div>)}
+                </div>
+              </div>
+              </>
+              );
+            })}
 
           <div className="absolute w-full flex justify-center bottom-6">
             {this.props.services.map((element, index) => {
