@@ -6,5 +6,5 @@ const services = await Astro.glob('../pages/services/*.md');
 ---
 
 <Layout>
-  <Carousel {services} client:visible />
+  <Carousel {services} client:load />
 </Layout>

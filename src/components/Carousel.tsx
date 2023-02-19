@@ -1,9 +1,18 @@
 import React, { Component } from "react";
-import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
+import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai/index.js";
 import Swipe from "react-easy-swipe";
 
-class Carousel extends Component {
-  constructor(props) {
+type MainProps = {
+  props: any[];
+};
+
+type MainState = {
+  currentSlide: number;
+  paused: boolean;
+};
+
+class Carousel extends React.Component<MainProps, MainState> {
+  constructor(props: MainProps) {
     super(props);
     this.state = {
       currentSlide: 0,
@@ -49,7 +58,7 @@ class Carousel extends Component {
         <div className="w-full h-screen relative">
           <AiOutlineLeft
             onClick={this.prevSlide}
-            className="absolute left-0 text-3xl inset-y-1/2 text-white cursor-pointer"
+            className="absolute left-5 text-3xl inset-y-1/2 text-white cursor-pointer"
           />
 
           <Swipe onSwipeLeft={this.nextSlide} onSwipeRight={this.prevSlide}>
@@ -85,16 +94,17 @@ class Carousel extends Component {
                       {slide.frontmatter.title}
                     </a>
                   </div>
+                  {slide.frontmatter.description && (
                   <div className="mx-8 text-lg">
                     {slide.frontmatter.description}
-                  </div>
+                  </div>)}
                 </div>
                 </div>
               );
             })}
           </Swipe>
 
-          <div className="absolute w-full flex justify-center bottom-0">
+          <div className="absolute w-full flex justify-center bottom-6">
             {this.props.services.map((element, index) => {
               return (
                 <div
@@ -114,7 +124,7 @@ class Carousel extends Component {
 
           <AiOutlineRight
             onClick={this.nextSlide}
-            className="absolute right-0 text-3xl inset-y-1/2 text-white cursor-pointer"
+            className="absolute right-5 text-3xl inset-y-1/2 text-white cursor-pointer"
           />
         </div>
       </div>
