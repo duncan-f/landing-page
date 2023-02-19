@@ -1,18 +1,18 @@
-import React, { Component } from "react";
-import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai/index.js";
+import * as React from "react";
 import Swipe from "react-easy-swipe";
+import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 
-interface MainProps {
+interface Props {
   services: any[];
 };
 
-interface MainState {
+interface State {
   currentSlide: number;
   paused: boolean;
 };
 
-class Carousel extends React.Component<MainProps, MainState> {
-  constructor(props: MainProps) {
+class Carousel extends React.Component<Props, State> {
+  constructor(props: Props) {
     super(props);
     this.state = {
       currentSlide: 0,
@@ -58,14 +58,14 @@ class Carousel extends React.Component<MainProps, MainState> {
         <div className="w-full h-screen relative">
           <AiOutlineLeft
             onClick={this.prevSlide}
-            className="absolute left-5 text-3xl inset-y-1/2 text-white cursor-pointer"
+            className="absolute left-10 text-3xl inset-y-1/2 text-white cursor-pointer"
           />
 
           <Swipe onSwipeLeft={this.nextSlide} onSwipeRight={this.prevSlide}>
             {this.props.services.map((slide, index) => {
               return (
               <>
-                <div className="flex items-center justify-center">
+              <div className="flex items-center justify-center">
                 <img
                   src={slide.frontmatter.heroImage}
                   alt={slide.frontmatter.title}
@@ -84,7 +84,7 @@ class Carousel extends React.Component<MainProps, MainState> {
                 />
                 <div className={
                   index === this.state.currentSlide
-                  ? "absolute mx-auto bottom-20 text-center"
+                  ? "absolute bottom-0 pt-5 text-center bg-slate-50/40 dark:bg-gray-900/40 w-full h-40"
                   : "hidden"
                 }>
                   <div className="mx-6 text-3xl font-oswald font-bold">
@@ -100,7 +100,7 @@ class Carousel extends React.Component<MainProps, MainState> {
                     {slide.frontmatter.description}
                   </div>)}
                 </div>
-                </div>
+              </div>
               </>
               );
             })}
@@ -126,7 +126,7 @@ class Carousel extends React.Component<MainProps, MainState> {
 
           <AiOutlineRight
             onClick={this.nextSlide}
-            className="absolute right-5 text-3xl inset-y-1/2 text-white cursor-pointer"
+            className="absolute right-10 text-3xl inset-y-1/2 text-white cursor-pointer"
           />
         </div>
       </div>
