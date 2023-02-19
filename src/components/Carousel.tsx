@@ -3,7 +3,7 @@ import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai/index.js";
 import Swipe from "react-easy-swipe";
 
 type MainProps = {
-  props: any[];
+  services: any[];
 };
 
 type MainState = {
@@ -48,7 +48,7 @@ class Carousel extends React.Component<MainProps, MainState> {
     this.setState({ currentSlide: newSlide });
   };
 
-  setCurrentSlide = (index) => {
+  setCurrentSlide = (index: number) => {
     this.setState({ currentSlide: index });
   };
 
