@@ -30,7 +30,7 @@ export default function DropdownMenu() {
               À propos de nous
             </DropdownMenuItem>
             <DropdownMenuItem href="/services">
-              Nos Services
+              Méthodes
             </DropdownMenuItem>
             <DropdownMenuItem href="/projects">
               Nos Réalisations

@@ -2,11 +2,11 @@ import React, { Component } from "react";
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai/index.js";
 import Swipe from "react-easy-swipe";
 
-type MainProps = {
+interface MainProps {
   services: any[];
 };
 
-type MainState = {
+interface MainState {
   currentSlide: number;
   paused: boolean;
 };
@@ -16,7 +16,7 @@ class Carousel extends React.Component<MainProps, MainState> {
     super(props);
     this.state = {
       currentSlide: 0,
-      paused: false,
+      paused: false
     };
   }
 
@@ -64,6 +64,7 @@ class Carousel extends React.Component<MainProps, MainState> {
           <Swipe onSwipeLeft={this.nextSlide} onSwipeRight={this.prevSlide}>
             {this.props.services.map((slide, index) => {
               return (
+              <>
                 <div className="flex items-center justify-center">
                 <img
                   src={slide.frontmatter.heroImage}
@@ -100,6 +101,7 @@ class Carousel extends React.Component<MainProps, MainState> {
                   </div>)}
                 </div>
                 </div>
+              </>
               );
             })}
           </Swipe>

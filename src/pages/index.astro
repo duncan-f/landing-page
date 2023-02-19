@@ -2,9 +2,9 @@
 import Layout from '../layouts/Layout.astro';
 import Carousel from '../components/Carousel';
 
-const services= await Astro.glob('../pages/services/*.md');
+const services = await Astro.glob('../pages/services/*.md');
 ---
 
 <Layout>
-	<Carousel {services} />
+	<Carousel {services} client:visible />
 </Layout>

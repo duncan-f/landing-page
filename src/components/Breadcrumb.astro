@@ -6,9 +6,6 @@ export interface Props {
 }
 
 const paths = Astro.url.pathname.split('/').filter((crumb: any) => crumb);
-paths.map(path =>
-  console.log(path)
-)
 
 const { name = paths[0] } = Astro.props as Props;
 ---
