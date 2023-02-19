@@ -1,10 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Carousel from '../components/Carousel';
-
-const services = await Astro.glob('../pages/services/*.md');
+import Content from '../components/Content.astro';
+import Paragraph from '../components/Paragraph.astro';
 ---
 
 <Layout>
-  <Carousel {services} client:load />
+	<main role="main">
+    <Content className="pt-5">
+    <Paragraph>This is the home page</Paragraph>
+    </Content>
+	</main>
 </Layout>
