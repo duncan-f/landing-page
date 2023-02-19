@@ -6,7 +6,7 @@ interface Props {
   services: any[];
 };
 
-interface State {
+export type State = {
   currentSlide: number;
   paused: boolean;
 };
