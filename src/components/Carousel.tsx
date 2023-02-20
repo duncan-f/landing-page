@@ -60,9 +60,9 @@ class Carousel extends React.Component<Props, State> {
             className="absolute left-10 text-3xl inset-y-1/2 text-white cursor-pointer"
           />
 
-            {this.props.services.map((slide, index) => {
-              return (
-              <>
+        {this.props.services.map((slide, index) => {
+          return (
+            <>
               <div className="flex items-center justify-center">
                 <img
                   src={slide.frontmatter.heroImage}
@@ -82,7 +82,7 @@ class Carousel extends React.Component<Props, State> {
                 />
                 <div className={
                   index === this.state.currentSlide
-                  ? "absolute bottom-0 pt-5 text-center bg-slate-50/40 dark:bg-gray-900/40 w-full h-40"
+                  ? "absolute bottom-0 pt-5 text-center bg-slate-50/40 dark:bg-gray-900/40 w-full h-60 md:h-40"
                   : "hidden"
                 }>
                   <div className="mx-6 text-3xl font-oswald font-bold">
@@ -99,11 +99,11 @@ class Carousel extends React.Component<Props, State> {
                   </div>)}
                 </div>
               </div>
-              </>
-              );
-            })}
+            </>
+          );
+        })}
 
-          <div className="absolute w-full flex justify-center bottom-6">
+          <div className="absolute w-full flex justify-center bottom-20 md:bottom-6">
             {this.props.services.map((element, index) => {
               return (
                 <div
